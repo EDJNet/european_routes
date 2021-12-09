@@ -2581,7 +2581,7 @@ routes_by_country_f(country = "IT", country_label = "Italy",
                     ylimits = c(35, 50))
 routes_by_country_f(country = "DE", country_label = "Germany",
                     xlimits = c(-5, 25),
-                    ylimits = c(42, 60)) 
+                    ylimits = c(46, 56 )) 
 routes_by_country_f(country = "ES", country_label = "Spain",
                     xlimits = c(-15, 10),
                     ylimits = c(35, 47)) 
