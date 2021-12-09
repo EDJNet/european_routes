@@ -255,7 +255,7 @@ avia_par_PAS_CRD_DEP_df %>%
 ```
 
 
-```{r layout="l-body"}
+```{r routes_passengers_scatter_gg, layout="l-body"}
 routes_passengers_scatter_gg <- avia_par_PAS_CRD_DEP_df %>%
   dplyr::group_by(source, .drop = TRUE) %>%
   dplyr::summarise(
@@ -862,7 +862,7 @@ Notice that this table includes routes between specific airports, not between ci
 Before moving on, let's have a quick look at the data we have so far. 
 
 
-```{r layout="l-body"}
+```{r european_routes_ranking_scatter_gg, layout="l-body"}
 european_routes_ranking_scatter_gg <- european_routes_ranking_df %>%
   slice_head(n = 250) %>%
   ggplot(mapping = aes(x = type, y = passengers)) +
@@ -883,7 +883,7 @@ ggiraph::girafe(code = print(european_routes_ranking_scatter_gg +
 
 Looking at the top routes, we notice that many of the most busy are domestic (hover to see name of the route):
 
-```{r layout="l-body"}
+```{r european_routes_ranking_bar_gg, layout="l-body"}
 european_routes_ranking_bar_gg <- european_routes_ranking_df %>%
   slice_head(n = 20) %>%
   arrange(desc(passengers)) %>%
@@ -1276,7 +1276,7 @@ european_airports_with_wikidata_details_df %>%
 
 
 
-```{r european airports, layout="l-body"}
+```{r european_airports_gg, layout="l-body"}
 
 
 european_airports_gg <- ggplot2::ggplot(european_airports_with_wikidata_details_df %>%
@@ -2672,4 +2672,12 @@ If you've gone through the whole document, you already know that, but just in ca
 - [`train_routes.csv`](data_train_routes/train_routes.csv). This is the original dataset produced by OBC Transeuropa for Greenpeace. `r scales::number(nrow(train_routes_df))` rows,  `r ncol(train_routes_df)` columns: `r knitr::combine_words(colnames(train_routes_df), sep = ", ", before = "'", after = "'")`
 - [`train_routes_coords.csv`](data/train_routes_coords.csv). Same as above, but with matching coordinates for the arrival and departure, distance, and unique identifiers that enables matching with previous datasets listed here or getting more data from Wikidata.  `r scales::number(nrow(train_routes_coords_df))` rows,  `r ncol(train_routes_coords_df)` columns: `r knitr::combine_words(colnames(train_routes_coords_df), sep = ", ", before = "'", after = "'")`
 
+# License
 
+This repository and related dataset is distributed under a Creative Commons CC BY license. 
+
+The dataset on trains has been produced by OBC Transeuropa for Greenpeace. Read the [full report](https://www.balcanicaucaso.org/eng/Occasional-papers/Train-alternatives-to-short-haul-flights-in-Europe), or check out [this article by Lorenzo Ferrari and Gianluca De Feo](https://www.europeandatajournalism.eu/eng/News/Data-news/More-trains-fewer-emissions) for context. 
+
+Data on flights have been distributed by Eurostat. See the `avia_par_` dataset for licensing and more details. 
+
+Code and datasets in this repository are by Giorgio Comai/OBCT/EDJNet.

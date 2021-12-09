@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+european_routes_ranking_df <- readr::read_csv(fs::path("data", "european_routes_ranking.csv"))
+european_routes_ranking_with_turkey_df <- readr::read_csv(fs::path("data", "european_routes_ranking_with_turkey.csv"))
+airport_qid_icao_details_df <- readr::read_csv(fs::path("data", "airport_qid_icao_details.csv"))
+airport_qid_unique_icao_details_df <- readr::read_csv(fs::path("data", "airport_qid_unique_icao_details.csv"))
+european_airports_with_wikidata_details_df <- readr::read_csv(fs::path("data", "european_airports_with_wikidata_details.csv"))
+european_airports_with_wikidata_details_fixed_hubs_df <- readr::read_csv(fs::path("data", "european_airports_with_wikidata_details_fixed_hubs.csv"))
+european_hub_routes_df <- readr::read_csv(fs::path("data", "european_hub_routes.csv"))
+european_hub_land_routes_df <- readr::read_csv(fs::path("data", "european_hub_land_routes.csv"))
+train_routes_df <- readr::read_csv(fs::path("data_train_routes", "train_routes.csv"))
+train_routes_coords_df <- readr::read_csv(fs::path("data", "train_routes_coords.csv"))
+```
+
+# Busiest European plane routes that can be travelled by train, with coordinates and identifiers
+
+See the [dedicated page](https://edjnet.github.io/european_routes/) for context and details. 
+
+Find below a preview of the datasets generated during the process. 
+
+![Top routes in Europe](maps/routes_map_top_gg.png)
+
+## Datasets
+
+- [`european_routes_ranking.csv`](data/european_routes_ranking.csv): `r scales::number(nrow(european_routes_ranking_df))` rows,  `r ncol(european_routes_ranking_df)` columns: `r knitr::combine_words(colnames(european_routes_ranking_df), sep = ", ", before = "'", after = "'")`
+- [`european_routes_ranking_with_turkey.csv`](data/european_routes_ranking_with_turkey.csv): same as above, but including data from Turkey
+- [airport_qid_icao_details.csv](data/airport_qid_icao_details.csv): this is a dataset with details on all items with an ICAO code in Wikidata across the world, completely based on Wikidata, and used for matching (be mindful about duplicates and potential data issues in particular with minor airfields):  `r scales::number(nrow(airport_qid_icao_details_df))` rows,  `r ncol(airport_qid_icao_details_df)` columns: `r knitr::combine_words(colnames(airport_qid_icao_details_df), sep = ", ", before = "'", after = "'")`
+- [`airport_qid_unique_icao_details.csv`](data/airport_qid_unique_icao_details.csv): same as above, but without duplicates, and probably more suitable for most use cases: `r scales::number(nrow(airport_qid_unique_icao_details_df))` rows,  `r ncol(airport_qid_unique_icao_details_df)` columns: `r knitr::combine_words(colnames(airport_qid_unique_icao_details_df), sep = ", ", before = "'", after = "'")`
+- [`european_airports_with_wikidata_details.csv`](data/european_airports_with_wikidata_details.csv): dataset with details on all airports that actually appear in Eurostat's `avia_par_` datasets. All of them have a set of coordinates: `r scales::number(nrow(european_airports_with_wikidata_details_df))` rows,  `r ncol(european_airports_with_wikidata_details_df)` columns: `r knitr::combine_words(colnames(european_airports_with_wikidata_details_df), sep = ", ", before = "'", after = "'")`
+- [`european_airports_with_wikidata_details_fixed_hubs.csv`](data/european_airports_with_wikidata_details_fixed_hubs.csv): similar to the above, but now each row also has a "hub", i.e. the main city or location served by the airport, with relevant coordinates and Wikidata identifier. `r scales::number(nrow(european_airports_with_wikidata_details_fixed_hubs_df))` rows,  `r ncol(european_airports_with_wikidata_details_fixed_hubs_df)` columns: `r knitr::combine_words(colnames(european_airports_with_wikidata_details_fixed_hubs_df), sep = ", ", before = "'", after = "'")`
+- [`european_hub_routes.csv`](data/european_hub_routes.csv): dataset with all European flights routes merged by hub (e.g. all London airports are summed together as a single destination). `r scales::number(nrow(european_hub_routes_df))` rows,  `r ncol(european_hub_routes_df)` columns: `r knitr::combine_words(colnames(european_hub_routes_df), sep = ", ", before = "'", after = "'")`
+- [`european_hub_land_routes.csv`](data/european_hub_land_routes.csv): similar to the above, but only routes that can plausibly be travelled by land are included. `r scales::number(nrow(european_hub_land_routes_df))` rows,  `r ncol(european_hub_land_routes_df)` columns: `r knitr::combine_words(colnames(european_hub_land_routes_df), sep = ", ", before = "'", after = "'")`
+- [`train_routes.csv`](data_train_routes/train_routes.csv). This is the original dataset produced by OBC Transeuropa for Greenpeace. `r scales::number(nrow(train_routes_df))` rows,  `r ncol(train_routes_df)` columns: `r knitr::combine_words(colnames(train_routes_df), sep = ", ", before = "'", after = "'")`
+- [`train_routes_coords.csv`](data/train_routes_coords.csv). Same as above, but with matching coordinates for the arrival and departure, distance, and unique identifiers that enables matching with previous datasets listed here or getting more data from Wikidata.  `r scales::number(nrow(train_routes_coords_df))` rows,  `r ncol(train_routes_coords_df)` columns: `r knitr::combine_words(colnames(train_routes_coords_df), sep = ", ", before = "'", after = "'")`
+
+## License
+
+This repository and related dataset is distributed under a Creative Commons CC BY license. 
+
+The dataset on trains has been produced by OBC Transeuropa for Greenpeace. Read the [full report](https://www.balcanicaucaso.org/eng/Occasional-papers/Train-alternatives-to-short-haul-flights-in-Europe), or check out [this article by Lorenzo Ferrari and Gianluca De Feo](https://www.europeandatajournalism.eu/eng/News/Data-news/More-trains-fewer-emissions) for context. 
+
+Data on flights have been distributed by Eurostat. See the `avia_par_` dataset for licensing and more details. 
+
+Code and datasets in this repository are by Giorgio Comai/OBCT/EDJNet.
