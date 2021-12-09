@@ -1,0 +1,52 @@
+icao_code,country,hub,hub_qid,airport,airport_qid
+EDDB,DE,Berlin,Q64,Berlin Brandenburg Airport,Q160556
+EDDT,DE,Berlin,Q64,Berlin-Tegel Airport,Q9688
+EBCI,BE,Brussels,Q239,Brussels South Charleroi Airport,Q1431012
+EBBR,BE,Brussels,Q239,Brussels Airport,Q28934
+EDDF,DE,Frankfurt,Q1794,Frankfurt Airport,Q46033
+EDFH,DE,Frankfurt,Q1794,Frankfurt-Hahn Airport,Q158211
+EGGW,UK,London,Q84,London Luton Airport,Q8712
+EGKK,UK,London,Q84,Gatwick Airport,Q8703
+EGLL,UK,London,Q84,Heathrow Airport,Q8691
+EGSS,UK,London,Q84,London Stansted Airport,Q8709
+EGLC,UK,London,Q84,London City Airport,Q8982
+EGMC,UK,London,Q84,London Southend Airport,Q1415441
+LIMC,IT,Milan,Q490,Milan–Malpensa Airport,Q60910
+LIME,IT,Milan,Q490,Il Caravaggio International Airport,Q517873
+LIML,IT,Milan,Q490,Linate Airport,Q828386
+LFPG,FR,Paris,Q90,Paris-Charles de Gaulle Airport,Q46280
+LFPO,FR,Paris,Q90,Orly Airport,Q223416
+LFOB,FR,Paris,Q90,Beauvais-Tillé Airport,Q611983
+LIPZ,IT,Venice,Q641,Venice Marco Polo Airport,Q849347
+LIPH,IT,Venice,Q641,Treviso Airport,Q513474
+EPGD,PL,Gdańsk,Q1792,Gdańsk Lech Wałęsa Airport,Q779984
+ENEV,NO,Narvik,Q59101,Harstad/Narvik Airport,Q1431455
+LEST,ES,Santiago de Compostela,Q14314,Santiago–Rosalía de Castro Airport,Q1432777
+LEAS,ES,Oviedo,Q14317,Ranon Airport,Q1430901
+LEAL,ES,Alicante,Q11959,Alicante Airport,Q849314
+EGCC,ES,Manchester,Q18125,Manchester Airport,Q8694
+EKBI,DK,Billund,Q1701099,Billund Airport,Q598121
+EGAA,UK,Belfast,Q10686,Belfast International Airport,Q8979
+EGAC,UK,Belfast,Q10686,George Best Belfast City Airport,Q8987
+EGPF,UK,Glasgow,Q4093,Glasgow Airport,Q8721
+EGPK,UK,Glasgow,Q4093,Glasgow Prestwick Airport,Q8992
+EDDH,DE,Hamburg,Q1055,Hamburg Airport,Q27706
+EDHI,DE,Hamburg,Q1055,Hamburg Finkenwerder Airport,Q663819
+LTBA,TR,Istanbul,Q406,Atatürk International Airport,Q86473
+LTFJ,TR,Istanbul,Q406,Istanbul Sabiha Gökçen International Airport,Q723622
+LTFM,TR,Istanbul,Q406,Istanbul Airport,Q3661908
+BIKF,IS,Reykjavík,Q1764,Keflavík Airport,Q139921
+BIRK,IS,Reykjavík,Q1764,Reykjavík Airport,Q843204
+LIRA,IT,Rome,Q220,Ciampino–G.B. Pastine International Airport,Q1132616
+LIRF,IT,Rome,Q220,Leonardo da Vinci–Fiumicino Airport,Q19101
+EGPB,UK,Shetland Islands,Q47134,Sumburgh Airport,Q1432932
+EGPM,UK,Shetland Islands,Q47134,Scatsta Airport,Q1915140
+ESKN,SE,Stockholm,Q1754,Stockholm Skavsta Airport,Q664946
+ESSA,SE,Stockholm,Q1754,Stockholm Arlanda Airport,Q223499
+ESSB,SE,Stockholm,Q1754,Stockholm Bromma Airport,Q29863
+GCTS,ES,Tenerife,Q40846,Tenerife South Airport,Q821984
+GCXO,ES,Tenerife,Q40846,Tenerife North Airport,Q932514
+LPAZ,PT,Vila do Porto,Q1003164,Santa Maria Airport,Q1432755
+LPPO,PT,Vila do Porto,Q1003164,SANTA MARIA OAC/FIR,Q17354136
+EPMO,PL,Warsaw,Q270,Warsaw-Modlin Mazovia Airport,Q1401995
+EPWA,PL,Warsaw,Q270,Warsaw Chopin Airport,Q465071
