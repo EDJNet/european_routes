@@ -19,11 +19,10 @@ output:
   distill::distill_article:
     toc: true
     toc_depth: 2
+    self_contained: true
     includes:      
       in_header: header.html
 ---
-
-<script defer data-domain="edjnet.github.io" src="https://plausible.europeandatajournalism.eu/js/plausible.js"></script>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, layout = "l-screen")
@@ -39,6 +38,7 @@ library("htmlwidgets") # store and embed interactive maps
 library("sf") # geo objects
 library("testthat") # some quality checks through the process
 library("fs") # consistent file management
+
 ```
 
 ## Introduction
@@ -2588,6 +2588,12 @@ routes_by_country_f(country = "ES", country_label = "Spain",
 routes_by_country_f(country = "FR", country_label = "France",
                     xlimits = c(-8, 13),
                     ylimits = c(42, 55))
+routes_by_country_f(country = "BE", country_label = "Belgium",
+                   xlimits = c(-8, 15),
+                    ylimits = c(43, 55)) 
+routes_by_country_f(country = "NL", country_label = "the Netherlands",
+                    xlimits = c(-8, 15),
+                    ylimits = c(43, 55))
 ```
 
 
